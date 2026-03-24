@@ -1,6 +1,3 @@
 namespace Projekt1_gr2.Models;
 
-public class SequenceShape
-{
-    
-}
+public enum SequenceShape { Random, Ascending, Descending, AShape, VShape }
