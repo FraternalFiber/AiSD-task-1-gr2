@@ -8,9 +8,11 @@ namespace Projekt1_gr2.Strategies.Sorting;
 
 public class BubbleSort : ISortingStrategy
 {
+    public string Name => "BubbleSort";
+    
     public SortStatistics Sort(int[] arr)
     {
-        var stats = new SortStatistics{AlgorithmName = "BubbleSort", Size=arr.Length};
+        var stats = new SortStatistics{AlgorithmName = Name, Size=arr.Length};
         Stopwatch sw= Stopwatch.StartNew();
         int n = arr.Length;
         bool swapped;

@@ -3,13 +3,14 @@ using Projekt1_gr2.Models;
 
 namespace Projekt1_gr2.Strategies.Sorting;
 
-public class ShellSort
+public class ShellSort : ISortingStrategy
 {
+    public string Name => "ShellSort";
     private static int comparisons = 0;
     private static int swaps = 0;
     public SortStatistics Sort(int[] array)
     {
-        var stats = new SortStatistics{AlgorithmName = "BubbleSort", Size=array.Length};
+        var stats = new SortStatistics{AlgorithmName = Name, Size=array.Length};
         Stopwatch sw= Stopwatch.StartNew();
         
         int n = array.Length;
