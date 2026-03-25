@@ -17,22 +17,19 @@ public class HeapSort : ISortingStrategy
         
         int n = array.Length;
         
-        
         for (int i = n / 2 - 1; i >= 0; i--)
         {
             Heapify(array, n, i);
         }
         
-        
         for (int i = n - 1; i > 0; i--)
         {
-            
-            (array[0], array[i])= (array[i], array[0]);
+            (array[0], array[i]) = (array[i], array[0]);
             swaps++;
-           
             
             Heapify(array, i, 0);
         }
+        
         sw.Stop();
         stats.TimeMs = sw.Elapsed.TotalMilliseconds;
         stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
@@ -60,6 +57,7 @@ public class HeapSort : ISortingStrategy
             largest = right;
         }
         
+        comparisons++;
         if (largest != i)
         {
             swaps++;
