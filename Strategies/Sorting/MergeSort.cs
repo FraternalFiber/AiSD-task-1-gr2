@@ -32,6 +32,7 @@ public class MergeSort : ISortingStrategy
             Sort(array, middle + 1, right);
             
             Merge(array, left, middle, right);
+            merges++;
         }
         
     }

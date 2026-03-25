@@ -9,6 +9,7 @@ public class QuickSortIterative : ISortingStrategy
     public string Name => "QuickSortIterative";
     private static int comparisons = 0;
     private static int swaps = 0;
+
     public SortStatistics Sort(int[] array)
     {
         var stats = new SortStatistics{AlgorithmName = Name, Size=array.Length};
@@ -27,7 +28,6 @@ public class QuickSortIterative : ISortingStrategy
             if (low < high)
             {
                 int pivotIndex = Partition(array, low, high);
-
                 // dodajemy lewą i prawą część na stos
                 if (pivotIndex - low > high - pivotIndex)
                 {

@@ -9,8 +9,9 @@ public class QuickSortRecursive : ISortingStrategy
     public string Name => "QuickSortRecursive";
     private static int comparisons = 0;
     private static int swaps = 0;
+    
     private static readonly Random _random = new Random();
-
+    
     public SortStatistics Sort(int[] array)
     {
         var stats = new SortStatistics{AlgorithmName = Name, Size=array.Length};
@@ -23,6 +24,7 @@ public class QuickSortRecursive : ISortingStrategy
         stats.Comparisons = comparisons;
         stats.Swaps= swaps;
         return stats;
+        
     }
 
     private static void Sort(int[] array, int left, int right)
