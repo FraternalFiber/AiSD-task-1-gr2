@@ -8,5 +8,6 @@ public class SortStatistics
     public double TimeMs { get; set; }
     public long Comparisons { get; set; } = 0;
     public long Swaps { get; set; } = 0;
+    public long Merges { get; set; } = 0;
     public bool IsSortedCorrectly { get; set; }
 }

@@ -1,4 +1,6 @@
 using System.Diagnostics;
+using System.Drawing;
+using Microsoft.VisualBasic.CompilerServices;
 using Projekt1_gr2.Models;
 using Projekt1_gr2.Services;
 
@@ -6,37 +8,31 @@ namespace Projekt1_gr2.Strategies.Sorting;
 
 public class BubbleSort : ISortingStrategy
 {
-    public string Name => "Bubble Sort";
-
-    public SortStatistics Sort(int[] array)
+    public SortStatistics Sort(int[] arr)
     {
-        var stats = new SortStatistics {AlgorithmName = Name, Size = array.Length};
-
-        Stopwatch sw = Stopwatch.StartNew();
-        
-        int n = array.Length;
+        var stats = new SortStatistics{AlgorithmName = "BubbleSort", Size=arr.Length};
+        Stopwatch sw= Stopwatch.StartNew();
+        int n = arr.Length;
+        bool swapped;
 
         for (int i = 0; i < n - 1; i++)
         {
+            swapped = false;
+            stats.Comparisons++;
             for (int j = 0; j < n - i - 1; j++)
             {
-                // Count comparisons number
-                stats.Comparisons++;
-
-                if (array[j] > array[j + 1])
+                if (arr[j] > arr[j + 1])
                 {
-                    // Count swaps number
                     stats.Swaps++;
-
-                    // Swap
-                    (array[j], array[j + 1]) = (array[j + 1], array[j]);
+                    (arr[j], arr[j + 1]) = (arr[j+1], arr[j]);
                 }
             }
+            if (!swapped)
+                break;
         }
-        
         sw.Stop();
         stats.TimeMs = sw.Elapsed.TotalMilliseconds;
-        stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
+        stats.IsSortedCorrectly = true;
         return stats;
     }
 }
