@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Projekt1_gr2.Models;
+using Projekt1_gr2.Services;
 
 namespace Projekt1_gr2.Strategies.Sorting;
 
@@ -16,7 +17,7 @@ public class MergeSort : ISortingStrategy
         
         sw.Stop();
         stats.TimeMs = sw.Elapsed.TotalMilliseconds;
-        stats.IsSortedCorrectly = true;
+        stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
         stats.Comparisons = comparisons;
         stats.Merges= merges;
         return stats;

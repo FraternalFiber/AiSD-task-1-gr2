@@ -12,6 +12,11 @@ class Program
         
         // Register sorting algorithms
         manager.AddAlgorithm(new BubbleSort());
+        manager.AddAlgorithm(new ShellSort());
+        manager.AddAlgorithm(new MergeSort());
+        manager.AddAlgorithm(new HeapSort());
+        manager.AddAlgorithm(new QuickSortIterative());
+        manager.AddAlgorithm(new QuickSortRecursive());
         
         // Register generating algorithms
         manager.AddGenerator(new RandomGenerator());
@@ -21,12 +26,11 @@ class Program
         manager.AddGenerator(new VShapeGenerator());
         
         // Tests
-        int[] nValues = { 500, 1000, 2000 };
+        int[] nValues = { 100, 500, 1000, 2000, 5000, 10000, 15000, 20000, 50000, 100000};
         int repetitions = 10;
         
         manager.Run(nValues, repetitions);
 
         Console.WriteLine("Testing ended. Press any key to exit.");
-        Console.ReadKey();
     }
 }

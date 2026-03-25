@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Projekt1_gr2.Models;
+using Projekt1_gr2.Services;
 
 namespace Projekt1_gr2.Strategies.Sorting;
 
@@ -18,7 +19,7 @@ public class QuickSortRecursive : ISortingStrategy
         Sort(array, 0, array.Length - 1);
         
         stats.TimeMs = sw.Elapsed.TotalMilliseconds;
-        stats.IsSortedCorrectly = true;
+        stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
         stats.Comparisons = comparisons;
         stats.Swaps= swaps;
         return stats;

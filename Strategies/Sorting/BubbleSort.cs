@@ -1,6 +1,4 @@
 using System.Diagnostics;
-using System.Drawing;
-using Microsoft.VisualBasic.CompilerServices;
 using Projekt1_gr2.Models;
 using Projekt1_gr2.Services;
 
@@ -10,11 +8,11 @@ public class BubbleSort : ISortingStrategy
 {
     public string Name => "BubbleSort";
     
-    public SortStatistics Sort(int[] arr)
+    public SortStatistics Sort(int[] array)
     {
-        var stats = new SortStatistics{AlgorithmName = Name, Size=arr.Length};
+        var stats = new SortStatistics{AlgorithmName = Name, Size=array.Length};
         Stopwatch sw= Stopwatch.StartNew();
-        int n = arr.Length;
+        int n = array.Length;
         bool swapped;
 
         for (int i = 0; i < n - 1; i++)
@@ -23,10 +21,11 @@ public class BubbleSort : ISortingStrategy
             stats.Comparisons++;
             for (int j = 0; j < n - i - 1; j++)
             {
-                if (arr[j] > arr[j + 1])
+                if (array[j] > array[j + 1])
                 {
                     stats.Swaps++;
-                    (arr[j], arr[j + 1]) = (arr[j+1], arr[j]);
+                    (array[j], array[j + 1]) = (array[j+1], array[j]);
+                    swapped = true;
                 }
             }
             if (!swapped)
@@ -34,7 +33,7 @@ public class BubbleSort : ISortingStrategy
         }
         sw.Stop();
         stats.TimeMs = sw.Elapsed.TotalMilliseconds;
-        stats.IsSortedCorrectly = true;
+        stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
         return stats;
     }
 }
