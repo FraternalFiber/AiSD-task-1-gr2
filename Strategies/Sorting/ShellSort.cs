@@ -7,8 +7,8 @@ namespace Projekt1_gr2.Strategies.Sorting;
 public class ShellSort : ISortingStrategy
 {
     public string Name => "ShellSort";
-    private static int comparisons = 0;
-    private static int swaps = 0;
+    private static long comparisons = 0;
+    private static long swaps = 0;
     public SortStatistics Sort(int[] array)
     {
         var stats = new SortStatistics{AlgorithmName = Name, Size=array.Length};
@@ -18,6 +18,8 @@ public class ShellSort : ISortingStrategy
 
         // generowanie przyrostów Papernova & Stasevicha
         List<int> gaps = GenerateGaps(n);
+
+        Console.Write("Przyrosty: ");
         
         foreach (int gap in gaps)
         {

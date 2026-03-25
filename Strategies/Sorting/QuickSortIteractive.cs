@@ -7,8 +7,8 @@ namespace Projekt1_gr2.Strategies.Sorting;
 public class QuickSortIterative : ISortingStrategy
 {
     public string Name => "QuickSortIterative";
-    private static int comparisons = 0;
-    private static int swaps = 0;
+    private static long comparisons = 0;
+    private static long swaps = 0;
 
     public SortStatistics Sort(int[] array)
     {

@@ -7,8 +7,8 @@ namespace Projekt1_gr2.Strategies.Sorting;
 public class HeapSort : ISortingStrategy
 {
     public string Name => "HeapSort";
-    private static int comparisons = 0;
-    private static int swaps = 0;
+    private static long comparisons = 0;
+    private static long swaps = 0;
     
     public SortStatistics Sort(int[] array)
     {
