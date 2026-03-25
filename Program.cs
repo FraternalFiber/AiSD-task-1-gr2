@@ -15,6 +15,10 @@ class Program
         
         // Register generating algorithms
         manager.AddGenerator(new RandomGenerator());
+        manager.AddGenerator(new AscendingGenerator());
+        manager.AddGenerator(new DescendingGenerator());
+        manager.AddGenerator(new AShapeGenerator());
+        manager.AddGenerator(new VShapeGenerator());
         
         // Tests
         int[] nValues = { 500, 1000, 2000 };

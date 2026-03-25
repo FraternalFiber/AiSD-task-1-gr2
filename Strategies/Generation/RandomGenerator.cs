@@ -14,7 +14,7 @@ public class RandomGenerator : ISequenceGenerator
 
         for (int i = 0; i < size; i++)
         {
-            array[i] = _rng.Next(1,  maxValue + 1);
+            array[i] = _rng.Next(1, maxValue + 1);
         }
         
         return array;

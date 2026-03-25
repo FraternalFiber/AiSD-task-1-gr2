@@ -46,7 +46,7 @@ public class ExperimentManager
                     int[] dataCopy = (int[])originalData.Clone();
 
                     var result = algorithm.Sort(dataCopy);
-                    Console.WriteLine($"n: {result.Size} | shape: {result.Shape} | time: {result.TimeMs} | comparisons: {result.Comparisons}");
+                    Console.WriteLine($"n: {result.Size} | shape: {shape} | time: {result.TimeMs} | comparisons: {result.Comparisons} | swaps: {result.Swaps}");
                 }
             }
         }

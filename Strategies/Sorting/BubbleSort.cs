@@ -10,7 +10,7 @@ public class BubbleSort : ISortingStrategy
 
     public SortStatistics Sort(int[] array)
     {
-        var stats = new SortStatistics {AlgorithmName =  Name, Size = array.Length};
+        var stats = new SortStatistics {AlgorithmName = Name, Size = array.Length};
 
         Stopwatch sw = Stopwatch.StartNew();
         
