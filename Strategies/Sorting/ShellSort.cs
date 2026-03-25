@@ -21,6 +21,7 @@ public class ShellSort : ISortingStrategy
         
         foreach (int gap in gaps)
         {
+            Console.Write(gap+ " ");
             // bubble sort dla elementów oddalonych o gap
             bool swapped;
             do
@@ -42,6 +43,7 @@ public class ShellSort : ISortingStrategy
         stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
         stats.Comparisons = comparisons;
         stats.Swaps= swaps;
+        Console.WriteLine();
         return stats;
     }
 
