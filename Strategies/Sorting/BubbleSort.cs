@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Projekt1_gr2.Models;
-using Projekt1_gr2.Utils;
+using Projekt1_gr2.Services;
 
 namespace Projekt1_gr2.Strategies.Sorting;
 
@@ -36,7 +36,7 @@ public class BubbleSort : ISortingStrategy
         
         sw.Stop();
         stats.TimeMs = sw.Elapsed.TotalMilliseconds;
-        stats.IsSortedCorrectly = Utils.ValidateSorting.ValidateAscending(array);
+        stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
         return stats;
     }
 }
