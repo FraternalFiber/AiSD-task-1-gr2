@@ -2,10 +2,11 @@ using System.Diagnostics;
 using System.Drawing;
 using Microsoft.VisualBasic.CompilerServices;
 using Projekt1_gr2.Models;
+using Projekt1_gr2.Services;
 
 namespace Projekt1_gr2.Strategies.Sorting;
 
-public class BubbleSort
+public class BubbleSort : ISortingStrategy
 {
     public SortStatistics Sort(int[] arr)
     {
