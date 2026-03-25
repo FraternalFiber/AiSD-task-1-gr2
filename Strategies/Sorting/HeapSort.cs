@@ -1,62 +1,70 @@
 using System;
+using System.Diagnostics;
+using Projekt1_gr2.Models;
+
 namespace Projekt1_gr2.Strategies.Sorting;
 
-public static class HeapSort
+public class HeapSort
 {
-    /// <summary>
-    /// Główna metoda sortująca tablicę przy użyciu algorytmu Heap Sort.
-    /// </summary>
-    public static void Sort<T>(T[] array) where T : IComparable<T>
-    {
-        int n = array.Length;
+    private static int comparisons = 0;
+    private static int swaps = 0;
 
-        // 1. Budowanie kopca (Max Heap)
-        // Zaczynamy od ostatniego węzła, który nie jest liściem
+
+    public SortStatistics Sort<T>(T[] array) where T : IComparable<T>
+    {
+        var stats = new SortStatistics{AlgorithmName = "HeapSort", Size=array.Length};
+        Stopwatch sw= Stopwatch.StartNew();
+        
+        int n = array.Length;
+        
+        
         for (int i = n / 2 - 1; i >= 0; i--)
         {
             Heapify(array, n, i);
         }
-
-        // 2. Wyciąganie elementów z kopca jeden po drugim
+        
+        
         for (int i = n - 1; i > 0; i--)
         {
-            // Przenosimy aktualny korzeń (największy element) na koniec
+            
             (array[0], array[i])= (array[i], array[0]);
-
-            // Wywołujemy Heapify na zredukowanym kopcu
+            swaps++;
+           
+            
             Heapify(array, i, 0);
         }
+        sw.Stop();
+        stats.TimeMs = sw.Elapsed.TotalMilliseconds;
+        stats.IsSortedCorrectly = true;
+        stats.Comparisons = comparisons;
+        stats.Swaps = swaps;
+        return stats;
     }
 
-    /// <summary>
-    /// Przekształca poddrzewo w kopiec binarny typu Max Heap.
-    /// </summary>
-    /// <param name="n">Rozmiar kopca</param>
-    /// <param name="i">Indeks korzenia poddrzewa</param>
+    
     private static void Heapify<T>(T[] array, int n, int i) where T : IComparable<T>
     {
-        int largest = i;      // Inicjalizujemy największy jako korzeń
-        int left = 2 * i + 1; // Lewy syn = 2*i + 1
-        int right = 2 * i + 2; // Prawy syn = 2*i + 2
-
-        // Jeśli lewy syn jest większy od korzenia
+        int largest = i;      
+        int left = 2 * i + 1; 
+        int right = 2 * i + 2; 
+        
+        comparisons++;
         if (left < n && array[left].CompareTo(array[largest]) > 0)
         {
             largest = left;
         }
-
-        // Jeśli prawy syn jest większy niż dotychczasowy największy
+        
+        comparisons++;
         if (right < n && array[right].CompareTo(array[largest]) > 0)
         {
             largest = right;
         }
-
-        // Jeśli największy element nie jest korzeniem
+        
         if (largest != i)
         {
+            swaps++;
             (array[i], array[largest])= (array[largest], array[i]);
-
-            // Rekurencyjnie naprawiamy zmienione poddrzewo
+            
             Heapify(array, n, largest);
         }
     }

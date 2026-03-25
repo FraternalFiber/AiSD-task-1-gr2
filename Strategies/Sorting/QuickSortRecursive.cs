@@ -1,18 +1,31 @@
+using System.Diagnostics;
+using Projekt1_gr2.Models;
+
 namespace Projekt1_gr2.Strategies.Sorting;
 
-public static class QuickSortRecursive
+public class QuickSortRecursive
 {
+    private static int comparisons = 0;
+    private static int swaps = 0;
     private static readonly Random _random = new Random();
 
-    public static void Sort(int[] array)
+    public SortStatistics Sort(int[] array)
     {
-        if (array.Length <= 1)
-            return;
+        var stats = new SortStatistics{AlgorithmName = "BubbleSort", Size=array.Length};
+        Stopwatch sw= Stopwatch.StartNew();
+        
         Sort(array, 0, array.Length - 1);
+        
+        stats.TimeMs = sw.Elapsed.TotalMilliseconds;
+        stats.IsSortedCorrectly = true;
+        stats.Comparisons = comparisons;
+        stats.Swaps= swaps;
+        return stats;
     }
 
     private static void Sort(int[] array, int left, int right)
     {
+        comparisons++;
         if (left < right)
         {
             int pivotIndex = Partition(array, left, right);
@@ -27,20 +40,24 @@ public static class QuickSortRecursive
         
         // zamiana losowego elementu z ostatnim
         Swap(array, randomIndex, right);
+        swaps++;
 
         int pivot = array[right];
         int i = left - 1; 
         
         for (int j = left; j < right; j++)
         {
+            comparisons++;
             if (array[j] < pivot)
             {
                 i++;
                 Swap(array, i, j);
+                swaps++;
             }
         }
 
         Swap(array, i + 1, right);
+        swaps++;
         
         return i + 1; // zwracamy indeks, w którym znajduje się pivot
     }

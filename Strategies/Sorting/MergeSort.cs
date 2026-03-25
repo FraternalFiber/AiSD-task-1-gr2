@@ -1,12 +1,24 @@
+using System.Diagnostics;
+using Projekt1_gr2.Models;
+
 namespace Projekt1_gr2.Strategies.Sorting;
 
-public static class MergeSort
+public class MergeSort
 {
-    public static void Sort(int[] array) 
+    private static int comparisons = 0;
+    private static int merges = 0;
+    public SortStatistics Sort(int[] array) 
     {
-        if (array.Length <= 1)
-            return;
+        var stats = new SortStatistics{AlgorithmName = "BubbleSort", Size=array.Length};
+        Stopwatch sw= Stopwatch.StartNew();
         Sort(array, 0, array.Length - 1);
+        
+        sw.Stop();
+        stats.TimeMs = sw.Elapsed.TotalMilliseconds;
+        stats.IsSortedCorrectly = true;
+        stats.Comparisons = comparisons;
+        stats.Merges= merges;
+        return stats;
     }
     /// dzielenie tablic na mniejsze części
     private static void Sort(int[] array, int left, int right)
@@ -19,6 +31,7 @@ public static class MergeSort
             
             Merge(array, left, middle, right);
         }
+        
     }
     
     private static void Merge(int[] array, int left, int middle, int right)
@@ -36,7 +49,8 @@ public static class MergeSort
         int k = left;
 
         while (i < n1 && j < n2)
-        {
+        { 
+            comparisons++;
             if (leftArray[i] <= rightArray[j])
             {
                 array[k] = leftArray[i];

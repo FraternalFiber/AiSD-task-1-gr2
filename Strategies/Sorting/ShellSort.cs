@@ -1,12 +1,17 @@
+using System.Diagnostics;
+using Projekt1_gr2.Models;
+
 namespace Projekt1_gr2.Strategies.Sorting;
 
-public static class ShellSort
+public class ShellSort
 {
-    public static void Sort(int[] array)
+    private static int comparisons = 0;
+    private static int swaps = 0;
+    public SortStatistics Sort(int[] array)
     {
-        if (array.Length <= 1)
-            return;
-
+        var stats = new SortStatistics{AlgorithmName = "BubbleSort", Size=array.Length};
+        Stopwatch sw= Stopwatch.StartNew();
+        
         int n = array.Length;
 
         // generowanie przyrostów Papernova & Stasevicha
@@ -21,6 +26,7 @@ public static class ShellSort
                 swapped = false;
                 for (int i = 0; i < n - gap; i++)
                 {
+                    comparisons++;
                     if (array[i] > array[i + gap])
                     {
                         (array[i], array[i + gap]) = (array[i + gap], array[i]);
@@ -30,6 +36,11 @@ public static class ShellSort
                 }
             } while (swapped); 
         }
+        stats.TimeMs = sw.Elapsed.TotalMilliseconds;
+        stats.IsSortedCorrectly = true;
+        stats.Comparisons = comparisons;
+        stats.Swaps= swaps;
+        return stats;
     }
 
     private static List<int> GenerateGaps(int n)
@@ -40,10 +51,13 @@ public static class ShellSort
         while (true)
         {
             int gap = (int)Math.Pow(2, k) + 1;
-            
+
+            comparisons++;
             if (gap >= n)
+            {
                 break;
-                
+            }
+
             gaps.Add(gap);
             k++;
         }

@@ -1,11 +1,16 @@
+using System.Diagnostics;
+using Projekt1_gr2.Models;
+
 namespace Projekt1_gr2.Strategies.Sorting;
 
 public class QuickSortIterative
 {
-    public static void Sort(int[] array)
+    private static int comparisons = 0;
+    private static int swaps = 0;
+    public SortStatistics Sort(int[] array)
     {
-        if (array.Length <= 1)
-            return;
+        var stats = new SortStatistics{AlgorithmName = "BubbleSort", Size=array.Length};
+        Stopwatch sw= Stopwatch.StartNew();
 
         // stos przechowujący granice podtablic do posortowania
         Stack<(int Low, int High)> stack = new Stack<(int, int)>();
@@ -34,28 +39,56 @@ public class QuickSortIterative
                 }
             }
         }
+        stats.TimeMs = sw.Elapsed.TotalMilliseconds;
+        stats.IsSortedCorrectly = true;
+        stats.Comparisons = comparisons;
+        stats.Swaps= swaps;
+        return stats;
     }
     
     private static int Partition(int[] array, int low, int high)
     {
         int mid = low + (high - low) / 2;
         
-        if (array[low] > array[mid]) Swap(array, low, mid);
-        if (array[low] > array[high]) Swap(array, low, high);
-        if (array[mid] > array[high]) Swap(array, mid, high);
+        comparisons++;
+        if (array[low] > array[mid])
+        {
+            Swap(array, low, mid);
+            swaps++;
+        }
+        
+        comparisons++;
+        if (array[low] > array[high])
+        {
+            Swap(array, low, high);
+            swaps++;
+        }
+        
+        comparisons++;
+        if (array[mid] > array[high])
+        {
+            Swap(array, mid, high);
+            swaps++;
+        }
+        
         Swap(array, mid, high);
+        swaps++;
+        
         int pivot = array[high];
         int i = low - 1;
         for (int j = low; j < high; j++)
         {
+            comparisons++;
             if (array[j] < pivot)
             {
                 i++;
                 Swap(array, i, j);
+                swaps++;
             }
         }
 
         Swap(array, i + 1, high);
+        swaps++;
         return i + 1;
     }
 
