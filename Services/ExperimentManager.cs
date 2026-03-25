@@ -1,3 +1,5 @@
+using System.Globalization;
+using CsvHelper;
 using Projekt1_gr2.Models;
 using Projekt1_gr2.Strategies.Generation;
 using Projekt1_gr2.Strategies.Sorting;
@@ -14,10 +16,13 @@ public class ExperimentManager
 
     public void Run(int[] nValues, int repetitions)
     {
-        /*
-         * W pliku CSV:
-         * nazwa_algorytmu ; n (długość) ; kształt ; czy_poprawnie ; czas_sortowania ; liczba_operacji
-         */
+        // Create CSV file
+        using var writer = new StreamWriter("result.csv");
+        using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
+                    
+        csv.WriteHeader<SortStatistics>();
+        csv.NextRecord();
+        
         // Loop for every value n = {1000, 2000, 5000, ...}
         foreach (int n in nValues)
         {
@@ -46,7 +51,14 @@ public class ExperimentManager
                     int[] dataCopy = (int[])originalData.Clone();
 
                     var result = algorithm.Sort(dataCopy);
-                    Console.WriteLine($"n: {result.Size} | shape: {shape} | time: {result.TimeMs} | comparisons: {result.Comparisons} | swaps: {result.Swaps} | sorted correctly: {result.IsSortedCorrectly}");
+                    result.Shape = shape;
+                    
+                    // Write record to console
+                    Console.WriteLine($"n: {result.Size} | shape: {result.Shape} | time: {result.TimeMs} | comparisons: {result.Comparisons} | swaps: {result.Swaps} | sorted correctly: {result.IsSortedCorrectly}");
+                    
+                    // Write record to CSV file
+                    csv.WriteRecord(result);
+                    csv.NextRecord();
                 }
             }
         }
