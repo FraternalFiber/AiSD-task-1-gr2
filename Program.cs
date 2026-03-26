@@ -25,7 +25,8 @@ class Program
         manager.AddGenerator(new AShapeGenerator());
         manager.AddGenerator(new VShapeGenerator());
         
-        int[] nValues = { 100, 500, 1000, 2000, 5000, 10000, 20000, 40000, 70000, 100000}; 
+        // int[] nValues = { 100, 500, 1000, 2000, 5000, 10000, 20000, 40000, 70000, 100000}; 
+        int[] nValues = { 100, 500, 1000, 2000 }; 
         int repetitions = 10;
         
         manager.Run(nValues, repetitions);

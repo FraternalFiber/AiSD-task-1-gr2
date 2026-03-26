@@ -18,12 +18,12 @@ public class ShellSort : ISortingStrategy
 
         // generowanie przyrostów Papernova & Stasevicha
         List<int> gaps = GenerateGaps(n);
-
-        Console.Write("Przyrosty: ");
+        
         
         foreach (int gap in gaps)
         {
-            Console.Write(gap+ " ");
+            stats.Gaps.Add(gap);
+            
             // bubble sort dla elementów oddalonych o gap
             bool swapped;
             do
@@ -35,8 +35,8 @@ public class ShellSort : ISortingStrategy
                     if (array[i] > array[i + gap])
                     {
                         (array[i], array[i + gap]) = (array[i + gap], array[i]);
-                        
                         swapped = true;
+                        swaps++;
                     }
                 }
             } while (swapped); 
@@ -44,8 +44,7 @@ public class ShellSort : ISortingStrategy
         stats.TimeMs = sw.Elapsed.TotalMilliseconds;
         stats.IsSortedCorrectly = DataValidator.ValidateAscending(array);
         stats.Comparisons = comparisons;
-        stats.Swaps= swaps;
-        Console.WriteLine();
+        stats.Swaps = swaps;
         return stats;
     }
 

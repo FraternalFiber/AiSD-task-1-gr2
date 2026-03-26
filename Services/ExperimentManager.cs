@@ -26,7 +26,7 @@ public class ExperimentManager
         // Loop for every value n = {1000, 2000, 5000, ...}
         foreach (int n in nValues)
         {
-            Console.WriteLine($"=== TESTOWANIE DLA n = {n} ===");
+            Console.WriteLine($"# Testowanie dla n = {n}");
             
             // 1. Prepare test data
             List<(int[] Data, SequenceShape Shape)> testSuite = new();
@@ -41,7 +41,14 @@ public class ExperimentManager
             // 2. Loop through algorithms
             foreach (var algorithm in _algorithms)
             {
-                Console.WriteLine($"--- Algorytm: {algorithm.Name} ---");
+                Console.WriteLine($"### Algorytm: {algorithm.Name}");
+
+                // In ShellSort gaps have to be printed, so there is a separate instruction for it below
+                if (algorithm.Name != "ShellSort")
+                {
+                    Console.WriteLine("| Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |");
+                    Console.WriteLine("| --- | --- | --- | --- | --- | --- | --- |");
+                }
                 
                 // 3. Repeat sorting to sort all test data
                 for (int i = 0; i < repetitions; i++)
@@ -53,8 +60,16 @@ public class ExperimentManager
                     var result = algorithm.Sort(dataCopy);
                     result.Shape = shape;
                     
+                    // Print also gaps in ShellSort
+                    if (i == 0 && algorithm.Name == "ShellSort")
+                    {
+                        Console.WriteLine($"Przyrosty: {string.Join(", ", result.Gaps)}");
+                        Console.WriteLine("| Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |");
+                        Console.WriteLine("| --- | --- | --- | --- | --- | --- | --- |");
+                    }
+                    
                     // Write record to console
-                    Console.WriteLine($"n: {result.Size} | shape: {result.Shape} | time: {result.TimeMs} | comparisons: {result.Comparisons} | swaps: {result.Swaps} | sorted correctly: {result.IsSortedCorrectly}");
+                    Console.WriteLine($"| {result.Size} | {result.Shape} | {result.TimeMs} | {result.Comparisons} | {result.Swaps} | {result.Merges} | {result.IsSortedCorrectly} |");
                     
                     // Write record to CSV file
                     csv.WriteRecord(result);
