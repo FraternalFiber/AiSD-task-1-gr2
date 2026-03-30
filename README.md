@@ -1,4 +1,9 @@
-# Testowanie dla n = 100
+# Raport
+- Projekt nr 1
+- Grupa robocza nr 2
+---
+# Testy
+## Testowanie dla n = 100
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -14,6 +19,7 @@
 | 100 | VShape | 0,0211 | 3774 | 2500 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 100 | Random | 0,0734 | 2502 | 318 | 0 | True |
@@ -78,7 +84,7 @@ Przyrosty: 65, 33, 17, 9, 5, 3, 1
 | 100 | Descending | 0,0052 | 6301 | 3776 | 0 | True |
 | 100 | AShape | 0,0047 | 7013 | 4192 | 0 | True |
 | 100 | VShape | 0,005 | 7773 | 4592 | 0 | True |
-# Testowanie dla n = 500
+## Testowanie dla n = 500
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -94,6 +100,7 @@ Przyrosty: 65, 33, 17, 9, 5, 3, 1
 | 500 | VShape | 0,4864 | 93874 | 62500 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 500 | Random | 0,076 | 35396 | 4321 | 0 | True |
@@ -158,7 +165,7 @@ Przyrosty: 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 500 | Descending | 0,0285 | 50979 | 28568 | 0 | True |
 | 500 | AShape | 0,0385 | 57489 | 32458 | 0 | True |
 | 500 | VShape | 0,0323 | 63039 | 35120 | 0 | True |
-# Testowanie dla n = 1000
+## Testowanie dla n = 1000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -174,6 +181,7 @@ Przyrosty: 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 1000 | VShape | 2,0868 | 375249 | 250000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1000 | Random | 0,2065 | 171191 | 21378 | 0 | True |
@@ -238,7 +246,7 @@ Przyrosty: 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 1000 | Descending | 0,0662 | 163993 | 92595 | 0 | True |
 | 1000 | AShape | 0,0716 | 175972 | 99931 | 0 | True |
 | 1000 | VShape | 0,0684 | 187726 | 106295 | 0 | True |
-# Testowanie dla n = 2000
+## Testowanie dla n = 2000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -254,6 +262,7 @@ Przyrosty: 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 2000 | VShape | 8,2374 | 1500499 | 1000000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2000 | Random | 0,4068 | 505076 | 60973 | 0 | True |
@@ -318,7 +327,7 @@ Przyrosty: 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 2000 | Descending | 0,132 | 407824 | 224086 | 0 | True |
 | 2000 | AShape | 0,1731 | 437069 | 240451 | 0 | True |
 | 2000 | VShape | 0,1512 | 465242 | 256366 | 0 | True |
-# Testowanie dla n = 5000
+## Testowanie dla n = 5000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -334,6 +343,7 @@ Przyrosty: 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 5000 | VShape | 51,6426 | 9376249 | 6250000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 5000 | Random | 1,4491 | 1403260 | 162930 | 0 | True |
@@ -398,7 +408,7 @@ Przyrosty: 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 5000 | Descending | 0,3653 | 1096547 | 605801 | 0 | True |
 | 5000 | AShape | 0,4174 | 1181411 | 654219 | 0 | True |
 | 5000 | VShape | 0,3829 | 1256721 | 696201 | 0 | True |
-# Testowanie dla n = 10000
+## Testowanie dla n = 10000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -414,6 +424,7 @@ Przyrosty: 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 10000 | VShape | 208,9247 | 37502499 | 25000000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 10000 | Random | 3,4591 | 3774268 | 431069 | 0 | True |
@@ -478,7 +489,7 @@ Przyrosty: 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 10000 | Descending | 0,8087 | 2609894 | 1423415 | 0 | True |
 | 10000 | AShape | 0,8433 | 2775191 | 1508367 | 0 | True |
 | 10000 | VShape | 0,8348 | 2937154 | 1590659 | 0 | True |
-# Testowanie dla n = 20000
+## Testowanie dla n = 20000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -494,6 +505,7 @@ Przyrosty: 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 20000 | VShape | 844,7818 | 150004999 | 100000000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 20000 | Random | 8,5511 | 9513967 | 1057700 | 0 | True |
@@ -558,7 +570,7 @@ Przyrosty: 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 20000 | Descending | 1,6164 | 5825712 | 3152821 | 0 | True |
 | 20000 | AShape | 1,6745 | 6192379 | 3354017 | 0 | True |
 | 20000 | VShape | 1,5554 | 6554871 | 3548185 | 0 | True |
-# Testowanie dla n = 40000
+## Testowanie dla n = 40000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -574,6 +586,7 @@ Przyrosty: 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
 | 40000 | VShape | 3389,9918 | 600009999 | 400000000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 40000 | Random | 18,252 | 23043892 | 2589416 | 0 | True |
@@ -638,7 +651,7 @@ Przyrosty: 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5
 | 40000 | Descending | 3,3522 | 12694064 | 6751929 | 0 | True |
 | 40000 | AShape | 3,2473 | 13453377 | 7160022 | 0 | True |
 | 40000 | VShape | 3,2662 | 14232119 | 7546006 | 0 | True |
-# Testowanie dla n = 70000
+## Testowanie dla n = 70000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -654,6 +667,7 @@ Przyrosty: 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5
 | 70000 | VShape | 10422,4745 | 1837517499 | 1225000000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 65537, 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 70000 | Random | 35,2478 | 51800624 | 5768011 | 0 | True |
@@ -718,7 +732,7 @@ Przyrosty: 65537, 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 1
 | 70000 | Descending | 5,849 | 25878520 | 13693425 | 0 | True |
 | 70000 | AShape | 6,1578 | 27305173 | 14457818 | 0 | True |
 | 70000 | VShape | 5,8497 | 28792335 | 15196696 | 0 | True |
-# Testowanie dla n = 100000
+## Testowanie dla n = 100000
 ### Algorytm: BubbleSort
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -734,6 +748,7 @@ Przyrosty: 65537, 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 1
 | 100000 | VShape | 21429,3631 | 3750024999 | 2500000000 | 0 | True |
 ### Algorytm: ShellSort
 Przyrosty: 65537, 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 17, 9, 5, 3, 1
+
 | Długość (n) | Kształt | Czas (ms) | Liczba porównań | Liczba zamian | Liczba scaleń | Czy posortowano prawidłowo |
 | --- | --- | --- | --- | --- | --- | --- |
 | 100000 | Random | 64,0726 | 105785371 | 11542155 | 0 | True |
@@ -798,3 +813,45 @@ Przyrosty: 65537, 32769, 16385, 8193, 4097, 2049, 1025, 513, 257, 129, 65, 33, 1
 | 100000 | Descending | 8,9502 | 46045484 | 24139617 | 0 | True |
 | 100000 | AShape | 9,097 | 48130187 | 25240969 | 0 | True |
 | 100000 | VShape | 9,0483 | 50201834 | 26354150 | 0 | True |
+
+---
+# Wykresy
+## Metoda sortowania w zależności czasu obliczeń od rozmiaru danych
+### Bubble Sort
+![BubbleSort](/Charts/BubbleSort.png)
+### Shell Sort
+![ShellSort](/Charts/ShellSort.png)
+### Merge Sort
+![MergeSort](/Charts/MergeSort.png)
+### Heap Sort
+![HeapSort](/Charts/HeapSort.jpeg)
+### Quick Sort Iterative
+![QuickSortIterative](/Charts/QuickSortIterative.png)
+### Quick Sort Recursive
+![QuickSortRecursive](/Charts/QuickSortRecursive.png)
+## Kształt danych w zależności czasu obliczeń od rozmiaru danych
+### Losowy
+![Random](/Charts/Random.png)
+### Rosnący
+![Ascending](/Charts/Ascending.png)
+### Malejący
+![Descending](/Charts/Descending.png)
+### A-kształtny
+![AShape](/Charts/AShape.png)
+### V-kształtny
+![VShape](/Charts/VShape.png)
+
+
+---
+# Złożoność obliczeniowa
+| Algorytm                             | Średnia | Optymistyczna | Pesymistyczna |
+|:-------------------------------------| :--- |:--------------| :--- |
+| **Bubble Sort**                      | $O(n^2)$ | $O(n)$        | $O(n^2)$ |
+| **Shell Sort**                       | $O(n^{3/2})$ | $O(n \log n)$ | $O(n^{3/2})$ |
+| **Merge Sort**                       | $O(n \log n)$ | $O(n \log n)$ | $O(n \log n)$ |
+| **Heap Sort**                        | $O(n \log n)$ | $O(n \log n)$ | $O(n \log n)$ |
+| **Quick Sort Recursive**             | $O(n \log n)$ | $O(n \log n)$ | $O(n^2)$ |
+| **Quick Sort Iterative**             | $O(n \log n)$ | $O(n \log n)$ | $O(n^2)$ |
+
+**Wniosek**: testy i wykresy danych potwierdzają te złożoności obliczeniowe.
+
