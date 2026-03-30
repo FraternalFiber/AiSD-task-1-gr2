@@ -20,5 +20,5 @@ public class SortStatistics
     public long Merges { get; set; } = 0;
     [Name("Is sorted correctly")]
     public bool IsSortedCorrectly { get; set; }
-    public List<int> Pivots = new();
+    public List<int> Gaps = [];
 }
